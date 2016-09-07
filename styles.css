@@ -1,6 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+body {
+	background-image:url(bckgrnd.png);
+	background-position:center;
+	background-size: 2000px;
+}
+
 .audioCenter{
 	margin: 10px auto; 
 	width: 560px; margin-top:-25px; margin-bottom:-20px;
@@ -12,7 +18,6 @@
 	margin-left:auto;
 	width:20em;
 	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
-	background-color:#B8BFB0;
 }
 
 .label {
