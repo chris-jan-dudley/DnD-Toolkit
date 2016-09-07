@@ -11,7 +11,8 @@
 	margin-right:auto;
 	margin-left:auto;
 	width:20em;
-	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	background-color:#B8BFB0;
 }
 
 .label {
