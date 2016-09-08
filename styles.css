@@ -29,8 +29,7 @@ body {
 	font-size: 25px;
 }
 .center_contaner {
-	margin-right: auto;
-	margin-left: auto;
+	clear:both;
 	width: 500px;
 	height: 1000px;
 	margin-top: -10px;
@@ -149,3 +148,22 @@ li.dropdown {
 	  font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 	  margin:10px;
   }
+.myFooter {
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	color:white;
+	font-size: 10px;
+	padding-top:10px;
+	background-color:#333;
+	clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: 4em;
+	bottom:-20px;
+	text-align:center;
+	width:100%;
+	box-shadow: 0px 0px 10px #535353;
+	}
+	
+	
+
