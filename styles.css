@@ -28,16 +28,7 @@ body {
 	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 	font-size: 25px;
 }
-.center_contaner {
-	margin-right: auto;
-	margin-left: auto;
-	width: 500px;
-	height: 1000px;
-	margin-top: -10px;
-	margin-bottom: -50px;
-	background-color: #FFFFFF;
-	box-shadow: 0px 0px 10px #535353;
-}
+
 .center_contaner_H {
 	margin-right: auto;
 	margin-left: auto;
