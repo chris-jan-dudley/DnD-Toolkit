@@ -2,141 +2,150 @@
 /* CSS Document */
 
 body {
-	background-image:url(bckgrnd.gif);
-	background-position:center;
+	background-image: url(bckgrnd.gif);
+	background-position: center;
 	background-size: 2000px;
 }
-
-.audioCenter{
-	margin: 10px auto; 
-	width: 400px; margin-top:-25px; margin-bottom:-20px;
-	}
-
+.audioCenter {
+	margin: 10px auto;
+	width: 400px;
+	margin-top: -25px;
+	margin-bottom: -20px;
+}
 .heading {
-	text-align:center;
-	margin-right:auto;
-	margin-left:auto;
-	margin-top:30px;
-	width:500px;
-	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+	width: 500px;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 }
-
 .label {
-	text-align:center;
-	margin-right:auto;
-	margin-left:auto;
-	width:10em;
-	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
-	font-size:25px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	width: 10em;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-size: 25px;
 }
-.center_contaner{
-	margin-right:auto;
-	margin-left:auto;
-	width:500px;
-	height:1000px;
-	margin-top:-10px;
-	margin-bottom:-50px;
-	background-color:#FFFFFF;
-	box-shadow:0px 0px 10px #535353;
+.center_contaner {
+	margin-right: auto;
+	margin-left: auto;
+	width: 500px;
+	height: 1000px;
+	margin-top: -10px;
+	margin-bottom: -50px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 10px #535353;
 }
-
-.center_contaner_H{
-	margin-right:auto;
-	margin-left:auto;
-	width:500px;
-	height:1000px;
-	margin-top:20px;
-	margin-bottom:-50px;
-	background-color:#FFFFFF;
-	box-shadow:0px 0px 10px #535353;
+.center_contaner_H {
+	margin-right: auto;
+	margin-left: auto;
+	width: 500px;
+	height: 1000px;
+	margin-top: 20px;
+	margin-bottom: -50px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 10px #535353;
 }
-
-.navbar{
-	width:700px;
-	margin-left:auto;
-	margin-right:auto;
-	height:55px;
-	background-color:#333;
-	margin-top:-10px;
+.navbar {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 55px;
+	background-color: #333;
+	margin-top: -10px;
 	display: flex;
-    justify-content: center;
-    align-items: center;
-	box-shadow:0px 0px 10px #535353;
-
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0px 10px #535353;
 }
-
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
 }
-
 li {
-    float: left;
-	font-size:20px;
+	float: left;
+	font-size: 20px;
 }
-
 li a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
-
 li a:hover, .dropdown:hover .dropbtn {
-    background-color:#A30002;
-	}
-
+	background-color: #A30002;
+}
 li.dropdown {
-    display: inline-block;
+	display: inline-block;
 }
-
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.show {display:block;}
-
-.handbook-div{
-	background-color:white;
-}
-
-.handbook-link{
 	color: black;
-	margin-right:auto;
-	margin-left:auto;
-	width:468px;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
 }
-
-.input-holder{width:400px; margin-left:auto; margin-right:auto; padding:-12x;}
-
-#btnAdd{width:70px; font-size:10pt; font-variant:small-caps;}
-
-#namein {width:130px; font-size:10pt; font-variant:small-caps;}
-
-#initin{width:50px; font-size:10pt; font-variant:small-caps;}
-
-#hpin{width:50px; font-size:10pt; font-variant:small-caps;}
-
-.hptab{width:50px; text-align:center; font-size:10pt; font-variant:small-caps;}
-
-
-
-	
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+.show {
+	display: block;
+}
+.handbook-div {
+	background-color: white;
+}
+.handbook-link {
+	color: black;
+	margin-right: auto;
+	margin-left: auto;
+	width: 468px;
+}
+.input-holder {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: -12x;
+}
+#btnAdd {
+	width: 70px;
+	font-size: 10pt;
+	font-variant: small-caps;
+}
+#namein {
+	width: 130px;
+	font-size: 10pt;
+	font-variant: small-caps;
+}
+#initin {
+	width: 50px;
+	font-size: 10pt;
+	font-variant: small-caps;
+}
+#hpin {
+	width: 50px;
+	font-size: 10pt;
+	font-variant: small-caps;
+}
+.hptab {
+	width: 50px;
+	text-align: center;
+	font-size: 10pt;
+	font-variant: small-caps;
+}
+p {
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	margin:10px;
+}
