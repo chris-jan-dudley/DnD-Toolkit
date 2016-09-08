@@ -145,7 +145,7 @@ li.dropdown {
 	font-size: 10pt;
 	font-variant: small-caps;
 }
-p {
-	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
-	margin:10px;
-}
+  .home_p {
+	  font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	  margin:10px;
+  }
