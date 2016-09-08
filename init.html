@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Initiative Tracker</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="blue/style.css" rel="stylesheet" type="text/css">
+    <script src="scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.js"></script> 
+</head>
+
+<body>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Mixer</a>
+            </li>
+
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Handbooks</a>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="3e.html">3.5</a>
+                    <a href="5e.html">5</a>
+                </div>
+            </li>
+<li><a href="init.html">Initiative</a></li>
+        </ul>
+    </div>
+
+    <div class="center_contaner_H">
+        <h1 class="heading">Initiative Tracker</h1>
+
+<div class="input-holder">
+<input id="namein" type="text" name="name" value="Name">
+<input id="initin" type="number" name="initiative" value=0>
+<input id="hpin" type="number" name="hp" value=0>
+<input type="button" id="btnAdd" onclick="AddRow()" value="Add"/>
+<input type="button" id="btnAdd" onclick="ClearTab()" value="Clear"/>
+</div>
+
+<table id="myTable" class="tablesorter">
+<thead>
+	<tr> 
+    	<th style="width:150px;">Name</th> 
+    	<th>Initiative</th> 
+   		<th style="width:50px;">HP</th> 
+	</tr> 
+</thead> 
+<tbody>
+</tbody>
+</table>
+
+    </div>
+
+</body>
+
+</html>
