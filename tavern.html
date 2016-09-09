@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="scripts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="jquery.js"></script>
+<script type="text/javascript" src="jquery.tablesorter.js"></script>
+</head>
+
+<body>
+<div class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a> </li>
+    <li><a href="mixer.html">Mixer</a> </li>
+    <!--<li class="dropdown"> <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Handbooks</a>
+      <div class="dropdown-content" id="myDropdown"> <a href="3e.html">3.5</a> <a href="5e.html">5</a> </div>
+    </li>-->
+    <li><a href="init.html">Initiative</a> </li>
+    <li><a href="tavern.html" style="background-color: #A30002;">Tavern Generator</a></li>
+  </ul>
+</div>
+<div class="center_contaner_H">
+  <h1 class="heading">Tavern Generator</h1>
+  <div style="margin-left:auto; margin-right: auto; width:310px;">
+  <input type="button" id="btnAdd" onclick="TavernAN()" value="Adjective Noun" style="width:150px;"/>
+    <input type="button" id="btnAdd" onclick="TavernNN()" value="Noun & Noun" style="width:150px;"/>
+    </div>
+  <p id="tav_name"></p>
+</div>
+<footer class="myFooter">Copyright © 2016 Chris Dudley	</footer>
+</body>
+</html>
