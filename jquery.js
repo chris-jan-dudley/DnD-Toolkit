@@ -55,7 +55,11 @@ var tavN1 = tavernN[Math.floor((Math.random() * tavernN.length))];
 var tavN2 = tavernN[Math.floor((Math.random() * tavernN.length))];
 if (tavN1===tavN2) {
 	TavernNN();
-} else {
+} else if(tavN1 === "Tavern" || tavN1 === "Inn" || tavN2 === "Tavern" || tavN2 === "Inn"){
+	TavernNN();
+} else if(tavN1.length > 5){
+	TavernNN();
+}else{
 $("#tav_name").text("The "+tavN1+" and "+tavN2);
 }
 }
