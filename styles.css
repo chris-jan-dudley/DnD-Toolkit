@@ -39,10 +39,12 @@ box-shadow: 0px 0px 5px #535353;
 }
 
 .center_contaner_H {
+	position:relative;
 	margin-right: auto;
 	margin-left: auto;
-	width: 500px;
-	height: 1000px;
+	width:80%;
+	max-width: 500px;
+	height: 900px;
 	margin-top: 20px;
 	margin-bottom: -50px;
 	background-color: #FFFFFF;
