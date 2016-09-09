@@ -1,5 +1,7 @@
 // JavaScript Document
 
+
+//Keeps count of the number of times "Add" is clicked for tracking initiatve
 function clickCounter() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.clickcount) {
@@ -10,6 +12,7 @@ function clickCounter() {
 }
 }
 
+//Adds a row to the initiative tracker based on user input, and stores the input in local storage
 function AddRow()
 {
 	clickCounter();
@@ -23,6 +26,7 @@ function AddRow()
 
 }
 
+//Loads the initiative tracker, and populates it with entries from local storage, if any are present
 $(document).ready(function() 
     { 
         $("#myTable").tablesorter(); 
@@ -35,21 +39,27 @@ $(document).ready(function()
     } 
 ); 
 
+//Clears local storage
  function ClearTab()
  {
 	$('#myTable').find("tr:gt(0)").remove(); 
 	localStorage.clear();
  }
  
-var tavernN = ["King","Queen","Cock","Dwarf","Elf","Orc","Goblin","Hobbit","Giant","Axe","Sword","Mace","Club","Castle","Keep","Tavern","Inn","Demon","Devil","Horse","Stallion","Bear","Hobgoblin","Gnome","Galleon","Cauldron"];
-var tavernA = ["Big","Drunken","Moist","Hearty","Sturdy","Mighty","Dank","Royal","Sticky","Tasty","Towering","Leaky","Little","Noble","Unfortunate","Grim","Magic","Lucky","Smelly","Rowdy","Randy"];
 
+//Tavern Name Nouns
+var tavernN = ["King","Queen","Cock","Dwarf","Elf","Orc","Goblin","Hobbit","Giant","Axe","Sword","Mace","Club","Castle","Keep","Tavern","Inn","Demon","Devil","Horse","Stallion","Bear","Hobgoblin","Gnome","Galleon","Cauldron","Lute","Harp","Fiddle","Plough"];
+//Tavern Name Adjectives
+var tavernA = ["Big","Drunken","Moist","Hearty","Sturdy","Mighty","Dank","Royal","Sticky","Tasty","Towering","Leaky","Little","Noble","Unfortunate","Grim","Magic","Lucky","Smelly","Rowdy","Randy","Spicy","Ploughing"];
+
+//Generates a tavern name of form Adjective and Noun
 function TavernAN(){
 var tavA = tavernA[Math.floor((Math.random() * tavernA.length))];
 var tavN = tavernN[Math.floor((Math.random() * tavernN.length))];
 $("#tav_name").text("The "+tavA+" "+tavN);	
 }
 
+//Generates a tavern name of form Noun and Noun
 function TavernNN(){
 var tavN1 = tavernN[Math.floor((Math.random() * tavernN.length))];
 var tavN2 = tavernN[Math.floor((Math.random() * tavernN.length))];
