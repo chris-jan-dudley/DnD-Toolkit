@@ -8,6 +8,7 @@ body {
 	background-size: 2000px;
 	background-repeat:no-repeat;
 	text-align:center;
+	
 }
 .audioCenter {
 	margin: 10px auto;
@@ -72,15 +73,18 @@ ul {
 	padding: 0;
 	overflow: hidden;
 	background-color: #333;
-	height:90%;
-	max-height:50px;
-	width:90%;
-	max-width:500px;
+	height:100%;
+	max-height:52px;
+	width:50%;
+	max-width:550px;
+	min-width:200px;
 }
 li {
 	float: left;
-	font-size: 1.3em;
-	width:25%;
+	font-size: 1.2em;
+	width:20%;
+	max-width:110px;
+	min-width:40px;
 	font-variant: small-caps;
 	
 }
@@ -91,11 +95,13 @@ li a, .dropbtn {
 	padding: 14px 16px;
 	text-decoration: none;
 	width:75%;
+	max-width:110px;
 	
 }
 li a:hover, .dropdown:hover .dropbtn {
 	background-color: #A30002;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	transition: background-color 0.2s ease;
+	box-shadow: 5px 8px 16px 0px rgba(0,0,0,0.2);
 	
 }
 li.dropdown {
@@ -201,5 +207,37 @@ li.dropdown {
 	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 	font-size:24px;
 	font-variant: small-caps;
+}
+
+#charNameIn {
+	width: 132px;
+	font-size: 10pt;
+	font-variant: small-caps;
+	box-shadow: 0px 0px 1px #535353;
+	padding:2px;
+}
+
+#charClassIn {
+	width: 132px;
+	font-size: 10pt;
+	font-variant: small-caps;
+	box-shadow: 0px 0px 1px #535353;
+	padding:2px;
+}
+
+#charRaceIn {
+	width: 132px;
+	font-size: 10pt;
+	font-variant: small-caps;
+	box-shadow: 0px 0px 1px #535353;
+	padding:2px;
+}
+
+#charLvlIn {
+	width: 132px;
+	font-size: 10pt;
+	font-variant: small-caps;
+	box-shadow: 0px 0px 1px #535353;
+	padding:2px;
 }
 

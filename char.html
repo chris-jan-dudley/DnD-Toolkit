@@ -19,26 +19,28 @@
     <!--<li class="dropdown"> <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Handbooks</a>
       <div class="dropdown-content" id="myDropdown"> <a href="3e.html">3.5</a> <a href="5e.html">5</a> </div>
     </li>-->
-    <li><a href="init.html" style="background-color: #A30002;">Initiative</a></li>
+    <li><a href="init.html">Initiative</a></li>
     <li><a href="tavern.html">Tavern</a></li>
-    <li><a href="char.html">Logs</a></li>
+    <li><a href="char.html" style="background-color: #A30002;">Logs</a></li>
   </ul>
 </div>
 <div class="center_contaner_H">
-  <h1 class="heading">Initiative Tracker</h1>
+  <h1 class="heading">Character Tracker</h1>
   <div class="input-holder">
-    <input id="namein" type="text" name="name" placeholder="Name">
-    <input id="initin" type="number" name="initiative" placeholder="Init">
-    <input id="hpin" type="number" name="hp" placeholder="HP">
-    <input type="button" id="btnAdd" onclick="AddRow()" value="Add"/>
-    <input type="button" id="btnAdd" onclick="ClearTab()" value="Clear"/>
+    <input id="charNameIn" type="text" name="name" placeholder="Character">
+    <input id="charClassIn" type="text" name="initiative" placeholder="Class"><br>
+    <input id="charRaceIn" type="text" name="initiative" placeholder="Race">
+    <input id="charLvlIn" type="number" name="hp" placeholder="Lvl"><br>
+    <input type="button" id="btnAdd" onclick="AddChar()" value="Add"/>
+    <input type="button" id="btnAdd" onclick="ClearChar()" value="Clear"/>
   </div>
-  <table id="myTable" class="tablesorter">
+  <table id="myCharTable" class="tablesorter">
     <thead>
       <tr>
-        <th style="width:150px;">Creature</th>
-        <th>Initiative</th>
-        <th style="width:50px;">HP</th>
+        <th>Character</th>
+        <th>Class</th>
+        <th>Race</th>
+        <th style="width:50px;">Level</th>
       </tr>
     </thead>
     <tbody>

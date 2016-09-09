@@ -1,54 +1,45 @@
 // JavaScript Document
 
-
-//Keeps count of the number of times "Add" is clicked for tracking initiatve
-function clickCounter() {
-    if(typeof(Storage) !== "undefined") {
-        if (localStorage.clickcount) {
-            localStorage.clickcount = Number(localStorage.clickcount)+1;
-        } else {
-            localStorage.clickcount = 1	;
-        }
-}
-}
-
 //Adds a row to the initiative tracker based on user input, and stores the input in local storage
 function AddRow()
 {
-	clickCounter();
-	var name = $('#namein').val();
-	var init = $('#initin').val();
-	var hp = $('#hpin').val();
-    $('#myTable').find('tbody').append('<tr><td>'+name+'</td><td>'+init+'</td><td><input class="hptab" type="number" value='+hp+' min="0"></td></tr>').trigger('update');
-	localStorage.setItem("entry"+String(localStorage.clickcount)+"name",String(name));
-	localStorage.setItem("entry"+String(localStorage.clickcount)+"i",String(init));
-	localStorage.setItem("entry"+String(localStorage.clickcount)+"hp",String(hp));
-
+	var initName = $('#namein').val();
+	var initInit = $('#initin').val();
+	var initHP = $('#hpin').val();
+	var iAllInfo = initName+'/'+initInit+'/'+initHP;
+	localStorage.setItem("entry"+initName, iAllInfo);
+	$('#myTable').find('tbody').append('<tr><td>'+initName+'</td><td>'+initInit+'</td><td><input class="hptab" type="number" value='+initHP+' min="0"></td></tr>').trigger('update');
 }
 
 //Loads the initiative tracker, and populates it with entries from local storage, if any are present
 $(document).ready(function() 
     { 
         $("#myTable").tablesorter(); 
-		for (var i=1;i<= Number(localStorage.clickcount);i++){
-		var nam = localStorage.getItem("entry"+String(i)+"name");
-		var int = localStorage.getItem("entry"+String(i)+"i");
-		var hp1 = localStorage.getItem("entry"+String(i)+"hp");
-		$('#myTable').find('tbody').append('<tr><td>'+nam+'</td><td>'+int+'</td><td><input class="hptab" type="number" value='+hp1+' min="0"></td></tr>').trigger('update');
+		for (var i=0;i<localStorage.length;i++){
+			var testIfInit = (localStorage.key(i)).slice(0,4);
+			if (testIfInit==="entr"){
+				var initInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
+				$('#myTable').find('tbody').append('<tr><td>'+initInfoArr[0]+'</td><td>'+initInfoArr[1]+'</td><td><input class="hptab" type="number" value='+initInfoArr[2]+' min="0"></td></tr>').trigger('update');		
 		}
     } 
+	}
 ); 
 
-//Clears local storage
+//Clears local storage of Initiatives
  function ClearTab()
  {
-	$('#myTable').find("tr:gt(0)").remove(); 
-	localStorage.clear();
+	for (var i=0;i< localStorage.length;i++){
+			var testIfInit = (localStorage.key(i)).slice(0,4);
+			if (testIfInit==="entr"){
+				localStorage.removeItem(localStorage.key(i));
+			}
+	}
+	$('#myTable').find("tr:gt(0)").remove();
  }
  
-
 //Tavern Name Nouns
 var tavernN = ["King","Queen","Cock","Dwarf","Elf","Orc","Goblin","Hobbit","Giant","Axe","Sword","Mace","Club","Castle","Keep","Tavern","Inn","Demon","Devil","Horse","Stallion","Bear","Hobgoblin","Gnome","Galleon","Cauldron","Lute","Harp","Fiddle","Plough","Silence","Privy","Minstrel","Shite"];
+
 //Tavern Name Adjectives
 var tavernA = ["Big","Drunken","Moist","Hearty","Sturdy","Mighty","Dank","Royal","Sticky","Tasty","Towering","Leaky","Little","Noble","Unfortunate","Grim","Magic","Lucky","Smelly","Rowdy","Randy","Spicy","Ploughing","Silent","Oily","Holy"];
 
@@ -73,5 +64,41 @@ if (tavN1===tavN2) {
 $("#tav_name").text("The "+tavN1+" and "+tavN2);
 }
 }
+
+//Adds Characters to table
+function AddChar()
+{
+	var cName = $('#charNameIn').val();
+	var cClass = $('#charClassIn').val();
+	var cRace = $('#charRaceIn').val();
+	var cLvl = $('#charLvlIn').val();
+	var cAbbr = cName.slice(0,3);
+	var cAllInfo = cName+'/'+cClass+'/'+cRace+'/'+cLvl;
+	localStorage.setItem("char"+cAbbr, cAllInfo);
+	$('#myCharTable').find('tbody').append('<tr><td>'+cName+'</td><td>'+cClass+'</td><td>'+cRace+'</td><td><input class="hptab" type="number" value='+cLvl+' min="0"></td></tr>').trigger('update');
+}
+
+//Loads the character table
+	$(document).ready(function() 
+    { 
+        $("#myCharTable").tablesorter(); 
+		for (var i=0;i< localStorage.length;i++){
+			var testIfChar = (localStorage.key(i)).slice(0,4);
+			if (testIfChar==="char"){
+				var charInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
+				$('#myCharTable').find('tbody').append('<tr><td>'+charInfoArr[0]+'</td><td>'+charInfoArr[1]+'</td><td>'+charInfoArr[2]+'</td><td><input class="hptab" type="number" value='+charInfoArr[3]+' min="0"></td></tr>').trigger('update');
+			}
+		}
+    }); 
 	
+//Clears characters from local storage
+function ClearChar(){ 
+	for (var i=0;i< localStorage.length;i++){
+			var testIfChar = (localStorage.key(i)).slice(0,4);
+			if (testIfChar==="char"){
+				localStorage.removeItem(localStorage.key(i));
+			}
+	}
+	$('#myCharTable').find("tr:gt(0)").remove();
+}
 
