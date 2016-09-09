@@ -65,6 +65,26 @@ $("#tav_name").text("The "+tavN1+" and "+tavN2);
 }
 }
 
+var humanMaleFirst = ["Kris","Flavius","Alex","Harold","George","Gregory","Percival","Tiber","Reginald","Ainsley","John","Samuel","Samwell","Robert","Brandon"];
+var humanFemaleFirst = ["Izzy","Olivia","Elizabeth","Jane","Harriet","Helen","Ursula","Gemma","Katie","Emily","Catelyn","Arya","Sansa"];
+var humanLast = ["Jones","Smith","Taylor","Miller","Stark","Cassel","Gregor","Harris","Harriet","Johnson","Speissen"];
+
+//NPC Name generator
+function NPCGen(){
+	var selectedGender = $('#genderSel').val();
+		if(selectedGender==="Male")
+		{
+			var nameF = humanMaleFirst[Math.floor((Math.random() * humanMaleFirst.length))];
+			var nameS = humanLast[Math.floor((Math.random() * humanLast.length))];
+			$("#npcName").text(nameF+" "+nameS);
+		} else if(selectedGender==="Female")
+		{
+			var nameF = humanFemaleFirst[Math.floor((Math.random() * humanFemaleFirst.length))];
+			var nameS = humanLast[Math.floor((Math.random() * humanLast.length))];
+			$("#npcName").text(nameF+" "+nameS);
+		}
+}
+
 //Adds Characters to table
 function AddChar()
 {
@@ -101,4 +121,5 @@ function ClearChar(){
 	}
 	$('#myCharTable').find("tr:gt(0)").remove();
 }
+
 

@@ -241,3 +241,9 @@ li.dropdown {
 	padding:2px;
 }
 
+.genderRaceSelector{
+	width: 70px;
+	font-size: 10pt;
+	font-variant: small-caps;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
