@@ -23,7 +23,9 @@ function AddRow()
 	localStorage.setItem("entry"+String(localStorage.clickcount)+"name",String(name));
 	localStorage.setItem("entry"+String(localStorage.clickcount)+"i",String(init));
 	localStorage.setItem("entry"+String(localStorage.clickcount)+"hp",String(hp));
-
+	$('#namein').val("");
+	$('#initin').val("");
+	$('#hpin').val("");
 }
 
 //Loads the initiative tracker, and populates it with entries from local storage, if any are present

@@ -2,9 +2,11 @@
 /* CSS Document */
 
 body {
+	background-color: #8C7E7E;
 	background-image: url(bckgrnd.gif);
 	background-position: center;
 	background-size: 2000px;
+	background-repeat:no-repeat;
 }
 .audioCenter {
 	margin: 10px auto;
@@ -40,6 +42,7 @@ body {
 	margin-bottom: -50px;
 	background-color: #FFFFFF;
 	box-shadow: 0px 0px 10px #535353;
+	padding:5px;
 }
 .navbar {
 	width: 700px;
@@ -121,19 +124,25 @@ li.dropdown {
 	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 }
 #namein {
-	width: 130px;
+	width: 134px;
 	font-size: 10pt;
 	font-variant: small-caps;
+	box-shadow: 0px 0px 1px #535353;
+	padding:2px;
 }
 #initin {
-	width: 50px;
+	width: 43px;
 	font-size: 10pt;
 	font-variant: small-caps;
+	box-shadow: 0px 0px 1px #535353;
+	padding:2px;
 }
 #hpin {
-	width: 50px;
+	width: 43px;
 	font-size: 10pt;
 	font-variant: small-caps;
+	box-shadow: 0px 0px 1px #535353;
+	padding:2px;
 }
 .hptab {
 	width: 50px;
