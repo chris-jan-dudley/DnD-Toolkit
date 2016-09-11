@@ -11,10 +11,6 @@ function AddRow()
 	var key = "entry"+initName;
 	localStorage.setItem(key, iAllInfo);
 	$('#myTable').find('tbody').append('<tr id='+key+'><td>'+initName+'</td><td>'+initInit+'</td><td><input class="actab" type="number" value='+initAC+'></td><td><input class="hptab" type="number" value='+initHP+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
-	$('#namein').text("");
-	$('#initin').text("");
-	$('#acin').text('');
-	$('#hpin').text('');
 }
 
 //Loads the initiative tracker, and populates it with entries from local storage, if any are present
@@ -26,7 +22,7 @@ $(document).ready(function()
 			if (testIfInit==="entr"){
 				var initInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
 				var key = "entry"+initInfoArr[0];
-				$('#myTable').find('tbody').append('<tr '+key+'><td>'+initInfoArr[0]+'</td><td>'+initInfoArr[1]+'</td><td><input class="actab" type="number" value='+initInfoArr[2]+'></td><td><input class="hptab" type="number" value='+initInfoArr[3]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');		
+				$('#myTable').find('tbody').append('<tr id='+key+'><td>'+initInfoArr[0]+'</td><td>'+initInfoArr[1]+'</td><td><input class="actab" type="number" value='+initInfoArr[2]+'></td><td><input class="hptab" type="number" value='+initInfoArr[3]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');		
 		}
     } 
 	}
@@ -49,9 +45,10 @@ $(document).ready(function()
  {
 	var conf = confirm("Are you sure you wish to delete this entry?");
 	if(conf){
-		if(pcid.slice(0,2) === "en"){
+		var checkKind = pcid.slice(0,2);
+		if(checkKind === "en"){
 			$('#myTable #'+pcid).remove();
-		}else if(pcid.slice(0,2) === "ch"){
+		}else if(checkKind === "ch"){
 			$('#myCharTable #'+pcid).remove();
 		}
 		localStorage.removeItem(pcid);}
