@@ -48,8 +48,13 @@ $(document).ready(function()
  function KillPC(pcid)
  {
 	var conf = confirm("Are you sure you wish to delete this entry?");
-	if(conf){$('#myTable #'+pcid).remove();
-	localStorage.removeItem(pcid);}
+	if(conf){
+		if(pcid.slice(0,2) === "en"){
+			$('#myTable #'+pcid).remove();
+		}else if(pcid.slice(0,2) === "ch"){
+			$('#myCharTable #'+pcid).remove();
+		}
+		localStorage.removeItem(pcid);}
  }
  
 //Tavern Name Nouns
@@ -112,8 +117,9 @@ function AddChar()
 	var cLvl = $('#charLvlIn').val();
 	var cAbbr = cName.slice(0,3);
 	var cAllInfo = cName+'/'+cClass+'/'+cRace+'/'+cLvl;
-	localStorage.setItem("char"+cAbbr, cAllInfo);
-	$('#myCharTable').find('tbody').append('<tr><td>'+cName+'</td><td>'+cClass+'</td><td>'+cRace+'</td><td><input class="hptab" type="number" value='+cLvl+' min="0"></td></tr>').trigger('update');
+	var key = "char"+cAbbr;
+	localStorage.setItem(key, cAllInfo);
+	$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+cName+'</td><td>'+cClass+'</td><td>'+cRace+'</td><td><input class="hptab" type="number" value='+cLvl+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
 }
 
 //Loads the character table
@@ -124,7 +130,9 @@ function AddChar()
 			var testIfChar = (localStorage.key(i)).slice(0,4);
 			if (testIfChar==="char"){
 				var charInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
-				$('#myCharTable').find('tbody').append('<tr><td>'+charInfoArr[0]+'</td><td>'+charInfoArr[1]+'</td><td>'+charInfoArr[2]+'</td><td><input class="hptab" type="number" value='+charInfoArr[3]+' min="0"></td></tr>').trigger('update');
+				var cAbbr = charInforArr[0].slice(0,3);
+				var key = "char"+cAbbr;
+				$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+charInfoArr[0]+'</td><td>'+charInfoArr[1]+'</td><td>'+charInfoArr[2]+'</td><td><input class="hptab" type="number" value='+charInfoArr[3]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
 			}
 		}
     }); 
