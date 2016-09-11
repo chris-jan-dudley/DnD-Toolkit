@@ -115,9 +115,8 @@ function AddChar()
 	var cClass = $('#charClassIn').val();
 	var cRace = $('#charRaceIn').val();
 	var cLvl = $('#charLvlIn').val();
-	var cAbbr = cName.slice(0,3);
 	var cAllInfo = cName+'/'+cClass+'/'+cRace+'/'+cLvl;
-	var key = "char"+cAbbr;
+	var key = "char"+cName;
 	localStorage.setItem(key, cAllInfo);
 	$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+cName+'</td><td>'+cClass+'</td><td>'+cRace+'</td><td><input class="hptab" type="number" value='+cLvl+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
 }
@@ -130,8 +129,7 @@ function AddChar()
 			var testIfChar = (localStorage.key(i)).slice(0,4);
 			if (testIfChar==="char"){
 				var charInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
-				var cAbbr = charInforArr[0].slice(0,3);
-				var key = "char"+cAbbr;
+				var key = "char"+charInfoArr[0];
 				$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+charInfoArr[0]+'</td><td>'+charInfoArr[1]+'</td><td>'+charInfoArr[2]+'</td><td><input class="hptab" type="number" value='+charInfoArr[3]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
 			}
 		}
