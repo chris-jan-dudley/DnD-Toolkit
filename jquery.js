@@ -154,7 +154,7 @@ function ClearChar(){
 
 //Adds characters in the log to the Initiative table (WIP)
 function ImportChars(){
-	var conf = confirm("Make sure you clear characters before importing them to avoid duplicates");
+	var conf = confirm("Make sure you clear any PCs from the initiative tracker before importing them to avoid duplicates!");
 	if(conf){
 	for (var i=0;i<localStorage.length;i++){
 		var testIfChar = (localStorage.key(i)).slice(0,4);
