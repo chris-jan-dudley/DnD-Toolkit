@@ -47,9 +47,9 @@ $(document).ready(function()
  //Kills a player in the initiative
  function KillPC(pcid)
  {
-	window.alert(pcid);
-	$('#myTable #'+pcid).remove();
-	localStorage.removeItem(pcid);
+	var conf = confirm("Are you sure you wish to delete this entry?");
+	if(conf){$('#myTable #'+pcid).remove();
+	localStorage.removeItem(pcid);}
  }
  
 //Tavern Name Nouns
