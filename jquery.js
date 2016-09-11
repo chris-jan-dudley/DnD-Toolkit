@@ -89,9 +89,9 @@ $("#tav_name").text("The "+tavN1+" and "+tavN2);
 //Human Male First Names
 var humanMaleFirst = ["Kris","Flavius","Alex","Harold","George","Gregory","Percival","Tiber","Reginald","Ainsley","John","Samuel","Samwell","Robert","Brandon","Hodor","Mikhail","Mike","Adam","Nathan","Norbert","Harry","Joshua","Swen","Gary","Grant","Hubert","Aaron","Alfred","Antony","Arden","Augustus","Andrea","Albert","Arthur","Bern","Barney","Bart","Brian","Bob","Benjamin","Benjen","Boris","Bruce","Buck","Bill","Byron"];
 //Human Female First Names
-var humanFemaleFirst = ["Izzy","Olivia","Elizabeth","Jane","Harriet","Helen","Ursula","Gemma","Katie","Emily","Catelyn","Arya","Sansa","Annabelle","Amy","Amelia","Belle","Belinda","Christina","Daria","Darla","Daisy",""];
+var humanFemaleFirst = ["Izzy","Olivia","Elizabeth","Jane","Harriet","Helen","Ursula","Gemma","Katie","Emily","Catelyn","Arya","Sansa","Annabelle","Amy","Amelia","Belle","Belinda","Christina","Daria","Darla","Daisy","Emma","Beth","Hilda","Frida","Gemma","Talissa","Arya","Felicity","Rita","June","Jess","Sophie","Sophia","Erica"];
 //Human Lastt Names
-var humanLast = ["Jones","Smith","Taylor","Miller","Stark","Cassel","Gregor","Harris","Harriet","Johnson","Speissen","Mormont","Addleson"];
+var humanLast = ["Jones","Smith","Taylor","Miller","Stark","Cassel","Gregor","Harris","Harriet","Johnson","Speissen","Mormont","Addleson","Porter","Kellman","Kirk","Montgomery","Jackson","Johnston","Martin","Tolkien","Wood","Hill","Castle","Townsman","Hamilton","Gregorio","Umbar","Redding"];
 
 //NPC Name generator
 function NPCGen(){
