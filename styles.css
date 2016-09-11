@@ -148,6 +148,13 @@ li.dropdown {
 	font-variant: small-caps;
 	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 }
+#btnImport {
+	width: 150px;
+	font-size: 10pt;
+	margin-top:25px;
+	font-variant: small-caps;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
 #namein {
 	width: 132px;
 	font-size: 10pt;
@@ -222,6 +229,17 @@ li.dropdown {
 	}
 	
 #tav_name{
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+	width: 500px;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-size:24px;
+	font-variant: small-caps;
+}
+
+#npcName{
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;

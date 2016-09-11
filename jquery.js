@@ -25,17 +25,21 @@ $(document).ready(function()
 				$('#myTable').find('tbody').append('<tr id='+key+'><td>'+initInfoArr[0]+'</td><td>'+initInfoArr[1]+'</td><td><input class="actab" type="number" value='+initInfoArr[2]+'></td><td><input class="hptab" type="number" value='+initInfoArr[3]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');		
 		}
     } 
-	}
-); 
+	}); 
 
 //Clears local storage of Initiatives
  function ClearTab()
  {
-	for (var i=0;i< localStorage.length;i++){
+	var i=0;
+	while (i< localStorage.length){
+		if(localStorage.key(i)!== null){
 			var testIfInit = (localStorage.key(i)).slice(0,4);
 			if (testIfInit==="entr"){
 				localStorage.removeItem(localStorage.key(i));
+			}else{
+				i++;	
 			}
+		}
 	}
 	$('#myTable').find("tr:gt(0)").remove();
  }
@@ -134,13 +138,35 @@ function AddChar()
 	
 //Clears characters from local storage
 function ClearChar(){ 
-	for (var i=0;i< localStorage.length;i++){
+	var i=0;
+	while (i< localStorage.length){
+		if(localStorage.key(i)!== null){
 			var testIfChar = (localStorage.key(i)).slice(0,4);
 			if (testIfChar==="char"){
 				localStorage.removeItem(localStorage.key(i));
+			} else {
+				i++;
 			}
+		}
 	}
 	$('#myCharTable').find("tr:gt(0)").remove();
 }
 
+//Adds characters in the log to the Initiative table (WIP)
+function ImportChars(){
+	for (var i=0;i<localStorage.length;i++){
+		var testIfChar = (localStorage.key(i)).slice(0,4);
+		if (testIfChar === "char"){
+				var charInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
+				$('#namein').val(charInfoArr[0]);
+				var charInit = prompt("Please enter initiatve for "+charInfoArr[0], "Initiative");
+    			if (charInit != null) {
+        			$('#initin').val(charInit);
+   				}
+				$('#acin').val(10);
+				$('#hpin').val(10);
+				AddRow();
+		}
+	}
+}
 
