@@ -30,16 +30,19 @@
   <div class="input-holder">
     <input id="namein" type="text" name="name" placeholder="Name">
     <input id="initin" type="number" name="initiative" placeholder="Init">
+    <input id="acin" type="number" name="ac" placeholder="AC">
     <input id="hpin" type="number" name="hp" placeholder="HP">
-    <input type="button" id="btnAdd" onclick="AddRow()" value="Add"/>
-    <input type="button" id="btnAdd" onclick="ClearTab()" value="Clear"/>
+    <input type="button" id="btnAdd" onclick="AddRow()" value="Add">
+    <input type="button" id="btnAdd" onclick="ClearTab()" value="Clear">
   </div>
   <table id="myTable" class="tablesorter">
     <thead>
       <tr>
         <th style="width:150px;">Creature</th>
-        <th>Initiative</th>
-        <th style="width:50px;">HP</th>
+        <th style="width:110px;">Initiative</th>
+        <th style="width:70px;">AC</th>
+        <th style="width:70px;">HP</th>
+        <th style="width:60px;">Kill</th>
       </tr>
     </thead>
     <tbody>

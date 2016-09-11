@@ -5,10 +5,16 @@ function AddRow()
 {
 	var initName = $('#namein').val();
 	var initInit = $('#initin').val();
+	var initAC = $('#acin').val();
 	var initHP = $('#hpin').val();
-	var iAllInfo = initName+'/'+initInit+'/'+initHP;
-	localStorage.setItem("entry"+initName, iAllInfo);
-	$('#myTable').find('tbody').append('<tr><td>'+initName+'</td><td>'+initInit+'</td><td><input class="hptab" type="number" value='+initHP+' min="0"></td></tr>').trigger('update');
+	var iAllInfo = initName+'/'+initInit+'/'+initAC+'/'+initHP;
+	var key = "entry"+initName;
+	localStorage.setItem(key, iAllInfo);
+	$('#myTable').find('tbody').append('<tr id='+key+'><td>'+initName+'</td><td>'+initInit+'</td><td><input class="actab" type="number" value='+initAC+'></td><td><input class="hptab" type="number" value='+initHP+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
+	$('#namein').text("");
+	$('#initin').text("");
+	$('#acin').text('');
+	$('#hpin').text('');
 }
 
 //Loads the initiative tracker, and populates it with entries from local storage, if any are present
@@ -19,7 +25,8 @@ $(document).ready(function()
 			var testIfInit = (localStorage.key(i)).slice(0,4);
 			if (testIfInit==="entr"){
 				var initInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
-				$('#myTable').find('tbody').append('<tr><td>'+initInfoArr[0]+'</td><td>'+initInfoArr[1]+'</td><td><input class="hptab" type="number" value='+initInfoArr[2]+' min="0"></td></tr>').trigger('update');		
+				var key = "entry"+initInfoArr[0];
+				$('#myTable').find('tbody').append('<tr '+key+'><td>'+initInfoArr[0]+'</td><td>'+initInfoArr[1]+'</td><td><input class="actab" type="number" value='+initInfoArr[2]+'></td><td><input class="hptab" type="number" value='+initInfoArr[3]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');		
 		}
     } 
 	}
@@ -35,6 +42,14 @@ $(document).ready(function()
 			}
 	}
 	$('#myTable').find("tr:gt(0)").remove();
+ }
+ 
+ //Kills a player in the initiative
+ function KillPC(pcid)
+ {
+	window.alert(pcid);
+	$('#myTable #'+pcid).remove();
+	localStorage.removeItem(pcid);
  }
  
 //Tavern Name Nouns
@@ -68,9 +83,9 @@ $("#tav_name").text("The "+tavN1+" and "+tavN2);
 //Human Male First Names
 var humanMaleFirst = ["Kris","Flavius","Alex","Harold","George","Gregory","Percival","Tiber","Reginald","Ainsley","John","Samuel","Samwell","Robert","Brandon","Hodor","Mikhail","Mike","Adam","Nathan","Norbert","Harry","Joshua","Swen","Gary","Grant","Hubert","Aaron","Alfred","Antony","Arden","Augustus","Andrea","Albert","Arthur","Bern","Barney","Bart","Brian","Bob","Benjamin","Benjen","Boris","Bruce","Buck","Bill","Byron"];
 //Human Female First Names
-var humanFemaleFirst = ["Izzy","Olivia","Elizabeth","Jane","Harriet","Helen","Ursula","Gemma","Katie","Emily","Catelyn","Arya","Sansa"];
+var humanFemaleFirst = ["Izzy","Olivia","Elizabeth","Jane","Harriet","Helen","Ursula","Gemma","Katie","Emily","Catelyn","Arya","Sansa","Annabelle","Amy","Amelia","Belle","Belinda","Christina","Daria","Darla","Daisy",""];
 //Human Lastt Names
-var humanLast = ["Jones","Smith","Taylor","Miller","Stark","Cassel","Gregor","Harris","Harriet","Johnson","Speissen"];
+var humanLast = ["Jones","Smith","Taylor","Miller","Stark","Cassel","Gregor","Harris","Harriet","Johnson","Speissen","Mormont","Addleson"];
 
 //NPC Name generator
 function NPCGen(){
