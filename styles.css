@@ -145,6 +145,7 @@ li.dropdown {
 #btnAdd {
 	width: 70px;
 	font-size: 10pt;
+	margin-top:5px;
 	font-variant: small-caps;
 	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 }
@@ -256,10 +257,12 @@ li.dropdown {
 	font-variant: small-caps;
 	box-shadow: 0px 0px 1px #535353;
 	padding:2px;
+	margin:2px;
 }
 
 #charClassIn {
 	width: 132px;
+	margin:2px;
 	font-size: 10pt;
 	font-variant: small-caps;
 	box-shadow: 0px 0px 1px #535353;
@@ -268,6 +271,7 @@ li.dropdown {
 
 #charRaceIn {
 	width: 132px;
+	margin:2px;
 	font-size: 10pt;
 	font-variant: small-caps;
 	box-shadow: 0px 0px 1px #535353;
@@ -276,6 +280,7 @@ li.dropdown {
 
 #charLvlIn {
 	width: 132px;
+	margin:2px;
 	font-size: 10pt;
 	font-variant: small-caps;
 	box-shadow: 0px 0px 1px #535353;

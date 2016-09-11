@@ -154,6 +154,8 @@ function ClearChar(){
 
 //Adds characters in the log to the Initiative table (WIP)
 function ImportChars(){
+	var conf = confirm("Make sure you clear characters before importing them to avoid duplicates");
+	if(conf){
 	for (var i=0;i<localStorage.length;i++){
 		var testIfChar = (localStorage.key(i)).slice(0,4);
 		if (testIfChar === "char"){
@@ -163,10 +165,17 @@ function ImportChars(){
     			if (charInit != null) {
         			$('#initin').val(charInit);
    				}
-				$('#acin').val(10);
-				$('#hpin').val(10);
+				var charAC = prompt("Please enter AC for "+charInfoArr[0], "AC");
+    			if (charAC != null) {
+        			$('#acin').val(charAC);
+   				}
+				var charHP = prompt("Please enter HP for "+charInfoArr[0], "HP");
+    			if (charHP != null) {
+        			$('#hpin').val(charHP);
+   				}
 				AddRow();
 		}
+	}
 	}
 }
 
