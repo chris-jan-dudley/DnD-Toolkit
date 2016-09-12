@@ -152,14 +152,24 @@ function ClearChar(){
 	$('#myCharTable').find("tr:gt(0)").remove();
 }
 
+//Adds all current localstorage items into an array for traversal
+function createSearchArray(){
+	var searchArray = [];		
+	for (var i=0;i<localStorage.length;i++){
+		searchArray.push(localStorage.key(i));	
+	}
+	return searchArray;
+}
+
 //Adds characters in the log to the Initiative table (WIP)
 function ImportChars(){
 	var conf = confirm("Make sure you clear any PCs from the initiative tracker before importing them to avoid duplicates!");
 	if(conf){
-	for (var i=0;i<localStorage.length;i++){
-		var testIfChar = localStorage.getItem((localStorage.key(i))).slice(0,4);
-		if (testIfChar === "char"){
-				var charInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
+		var keyArray = createSearchArray();
+		for(var i=0;i<keyArray.length;i++){
+			var testIfChar = (localStorage.getItem(keyArray[i])).slice(0,4);
+			if (testIfChar === "char"){
+				var charInfoArr = (localStorage.getItem(keyArray[i])).split('/');
 				$('#namein').val(charInfoArr[1]);
 				var charInit = prompt("Please enter initiatve for "+charInfoArr[1], "Initiative");
     			if (charInit != null) {
@@ -174,8 +184,8 @@ function ImportChars(){
         			$('#hpin').val(charHP);
    				}
 				AddRow();
+			}
 		}
-	}
 	}
 }
 
