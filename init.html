@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<link rel="icon" href="chrisdnd.png">
+<meta charset="utf-8">
+<title>D&amp;D Toolkit - Initiative Tracker</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="blue/style.css" rel="stylesheet" type="text/css">
+<script src="scripts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="jquery.js"></script>
+<script type="text/javascript" src="jquery.tablesorter.js"></script>
+</head>
+
+<body>
+<div class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mixer.html">Mixer</a></li>
+    <li><a href="init.html" style="background-color: #A30002;">Initiative</a></li>
+    <li><a href="tavern.html">Names</a></li>
+    <li><a href="char.html">Logs</a></li>
+  </ul>
+</div>
+<div class="center_contaner_H">
+  <h1 class="heading">Initiative Tracker</h1>
+  <div class="input-holder">
+    <input id="namein" type="text" name="name" placeholder="Name">
+    <input id="initin" type="number" name="initiative" placeholder="Init">
+    <input id="acin" type="number" name="ac" placeholder="AC">
+    <input id="hpin" type="number" name="hp" placeholder="HP">
+    <input type="button" id="btnAdd" onclick="AddRow()" value="Add">
+    <input type="button" id="btnAdd" onclick="ClearTab()" value="Clear"><br>
+    <input type="button" id="btnImport" onClick="ImportChars()" value="Import Characters">
+  </div>
+  <table id="myTable" class="tablesorter">
+    <thead>
+      <tr>
+        <th style="width:150px;">Creature</th>
+        <th style="width:110px;">Initiative</th>
+        <th style="width:70px;">AC</th>
+        <th style="width:70px;">HP</th>
+        <th style="width:60px;">Kill</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <br>
+  <p class="desc_p">Welcome to the "Initiative Tracker". The purpose of this tool is, as the name suggests, to help you track initiatives during combat. When you enter a creature using the input boxes, it will be added to a table, which lets you sort by initiative. You can clear the table, "kill" individual creatures, and import your characters stored on the character log page quickly, needing only to enter their numerical stats for this combat.<br>There are still some niggles to be worked out regarding sortable columns and the such, but having the ability to sort the initiative on the fly is something I felt was lacking in pencil/paper record keeping, and I hope this makes turn order easier to follow. These records are stored locally, so should remain if you switch pages or restart your browser.</p>
+</div>
+<footer class="myFooter">Copyright © 2016 C Dudley	</footer>
+</body>
+</html>

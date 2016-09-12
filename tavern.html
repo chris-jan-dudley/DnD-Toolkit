@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<link rel="icon" href="chrisdnd.png">
+<meta charset="utf-8">
+<title>D&amp;D Toolkit - Name Generator</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="scripts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="jquery.js"></script>
+</head>
+
+<body>
+<div class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a> </li>
+    <li><a href="mixer.html">Mixer</a> </li>
+    <li><a href="init.html">Initiative</a> </li>
+    <li><a href="tavern.html" style="background-color: #A30002;">Names</a></li>
+    <li><a href="char.html">Logs</a></li>
+  </ul>
+</div>
+<div class="center_contaner_H">
+  <h1 class="heading">Tavern Generator</h1>
+  <div style="margin-left:auto; margin-right: auto; width:310px;">
+  <input type="button" id="btnAdd" onclick="TavernAN()" value="Adjective Noun" style="width:150px;"/>
+    <input type="button" id="btnAdd" onclick="TavernNN()" value="Noun & Noun" style="width:150px;"/>
+    </div>
+  <p id="tav_name">...</p>
+  <h1 class="heading">NPC Name Generator</h1>
+  <select id="raceSel" name="races" class="genderRaceSelector">
+  <option>Human<br></option>
+  </select>
+  <select id="genderSel" name="genders" class="genderRaceSelector">
+  <option>Male<br></option>
+  <option>Female<br></option>
+  </select>
+  <input type="button" id="btnAdd" onclick="NPCGen()" value="Generate" style="width:150px;"/><br>
+  <p id="npcName">...</p>
+  <br>
+  <p class="desc_p">Welcome to the Tavern and NPC name generators. Similar tools exist in much better forms all over the internet, and these will be a pretty much eternal WIP as I add more names and name combinations as they occur to me. I felt the urge to make my own name generator because it should give me the flexibility to include only names I'd like to use or see come up. This is arguably limiting, but I enjoy having pronouncable yet exotic names, so that's the balance I'm aiming for.</p>
+</div>
+<footer class="myFooter">Copyright © 2016 C Dudley	</footer>
+</body>
+</html>
