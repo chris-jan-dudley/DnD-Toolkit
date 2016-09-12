@@ -7,8 +7,8 @@ function AddRow()
 	var initInit = $('#initin').val();
 	var initAC = $('#acin').val();
 	var initHP = $('#hpin').val();
-	var iAllInfo = initName+'/'+initInit+'/'+initAC+'/'+initHP;
-	var key = "entry"+initName;
+	var iAllInfo = "init/"+initName+'/'+initInit+'/'+initAC+'/'+initHP;
+	var key = generateUUID();
 	localStorage.setItem(key, iAllInfo);
 	$('#myTable').find('tbody').append('<tr id='+key+'><td>'+initName+'</td><td>'+initInit+'</td><td><input class="actab" type="number" value='+initAC+'></td><td><input class="hptab" type="number" value='+initHP+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
 }
@@ -18,11 +18,11 @@ $(document).ready(function()
     { 
         $("#myTable").tablesorter(); 
 		for (var i=0;i<localStorage.length;i++){
-			var testIfInit = (localStorage.key(i)).slice(0,4);
-			if (testIfInit==="entr"){
+			var testIfInit = localStorage.getItem((localStorage.key(i))).slice(0,4);
+			if (testIfInit==="init"){
 				var initInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
-				var key = "entry"+initInfoArr[0];
-				$('#myTable').find('tbody').append('<tr id='+key+'><td>'+initInfoArr[0]+'</td><td>'+initInfoArr[1]+'</td><td><input class="actab" type="number" value='+initInfoArr[2]+'></td><td><input class="hptab" type="number" value='+initInfoArr[3]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');		
+				var key = localStorage.key(i);
+				$('#myTable').find('tbody').append('<tr id='+key+'><td>'+initInfoArr[1]+'</td><td>'+initInfoArr[2]+'</td><td><input class="actab" type="number" value='+initInfoArr[3]+'></td><td><input class="hptab" type="number" value='+initInfoArr[4]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');		
 		}
     } 
 	}); 
@@ -33,8 +33,8 @@ $(document).ready(function()
 	var i=0;
 	while (i< localStorage.length){
 		if(localStorage.key(i)!== null){
-			var testIfInit = (localStorage.key(i)).slice(0,4);
-			if (testIfInit==="entr"){
+			var testIfInit = localStorage.getItem((localStorage.key(i))).slice(0,4);
+			if (testIfInit==="init"){
 				localStorage.removeItem(localStorage.key(i));
 			}else{
 				i++;	
@@ -49,10 +49,10 @@ $(document).ready(function()
  {
 	var conf = confirm("Are you sure you wish to delete this entry?");
 	if(conf){
-		var checkKind = pcid.slice(0,2);
-		if(checkKind === "en"){
+		var checkKind = localStorage.getItem(pcid).slice(0,4);
+		if(checkKind === "init"){
 			$('#myTable #'+pcid).remove();
-		}else if(checkKind === "ch"){
+		}else if(checkKind === "char"){
 			$('#myCharTable #'+pcid).remove();
 		}
 		localStorage.removeItem(pcid);}
@@ -116,8 +116,8 @@ function AddChar()
 	var cClass = $('#charClassIn').val();
 	var cRace = $('#charRaceIn').val();
 	var cLvl = $('#charLvlIn').val();
-	var cAllInfo = cName+'/'+cClass+'/'+cRace+'/'+cLvl;
-	var key = "char"+cName;
+	var cAllInfo = "char/"+cName+'/'+cClass+'/'+cRace+'/'+cLvl;
+	var key = generateUUID();
 	localStorage.setItem(key, cAllInfo);
 	$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+cName+'</td><td>'+cClass+'</td><td>'+cRace+'</td><td><input class="hptab" type="number" value='+cLvl+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
 }
@@ -127,11 +127,11 @@ function AddChar()
     { 
         $("#myCharTable").tablesorter(); 
 		for (var i=0;i< localStorage.length;i++){
-			var testIfChar = (localStorage.key(i)).slice(0,4);
+			var testIfChar = localStorage.getItem((localStorage.key(i))).slice(0,4);
 			if (testIfChar==="char"){
 				var charInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
-				var key = "char"+charInfoArr[0];
-				$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+charInfoArr[0]+'</td><td>'+charInfoArr[1]+'</td><td>'+charInfoArr[2]+'</td><td><input class="hptab" type="number" value='+charInfoArr[3]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
+				var key = localStorage.key(i);
+				$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+charInfoArr[1]+'</td><td>'+charInfoArr[2]+'</td><td>'+charInfoArr[3]+'</td><td><input class="hptab" type="number" value='+charInfoArr[4]+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
 			}
 		}
     }); 
@@ -141,7 +141,7 @@ function ClearChar(){
 	var i=0;
 	while (i< localStorage.length){
 		if(localStorage.key(i)!== null){
-			var testIfChar = (localStorage.key(i)).slice(0,4);
+			var testIfChar = localStorage.getItem((localStorage.key(i))).slice(0,4);
 			if (testIfChar==="char"){
 				localStorage.removeItem(localStorage.key(i));
 			} else {
@@ -157,19 +157,19 @@ function ImportChars(){
 	var conf = confirm("Make sure you clear any PCs from the initiative tracker before importing them to avoid duplicates!");
 	if(conf){
 	for (var i=0;i<localStorage.length;i++){
-		var testIfChar = (localStorage.key(i)).slice(0,4);
+		var testIfChar = localStorage.getItem((localStorage.key(i))).slice(0,4);
 		if (testIfChar === "char"){
 				var charInfoArr = (localStorage.getItem(localStorage.key(i))).split('/');
-				$('#namein').val(charInfoArr[0]);
-				var charInit = prompt("Please enter initiatve for "+charInfoArr[0], "Initiative");
+				$('#namein').val(charInfoArr[1]);
+				var charInit = prompt("Please enter initiatve for "+charInfoArr[1], "Initiative");
     			if (charInit != null) {
         			$('#initin').val(charInit);
    				}
-				var charAC = prompt("Please enter AC for "+charInfoArr[0], "AC");
+				var charAC = prompt("Please enter AC for "+charInfoArr[1], "AC");
     			if (charAC != null) {
         			$('#acin').val(charAC);
    				}
-				var charHP = prompt("Please enter HP for "+charInfoArr[0], "HP");
+				var charHP = prompt("Please enter HP for "+charInfoArr[1], "HP");
     			if (charHP != null) {
         			$('#hpin').val(charHP);
    				}
@@ -179,8 +179,16 @@ function ImportChars(){
 	}
 }
 
-var simplemde = new SimpleMDE({	
-element: document.getElementById("MyNotes"),
-});
 
-
+function generateUUID() {
+    var d = new Date().getTime();
+    if(window.performance && typeof window.performance.now === "function"){
+        d += performance.now();; //use high-precision timer if available
+    }
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (d + Math.random()*16)%16 | 0;
+        d = Math.floor(d/16);
+        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+}
