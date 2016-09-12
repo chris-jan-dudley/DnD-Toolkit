@@ -1,4 +1,4 @@
-<!doctype html>
+	<!doctype html>
 <html>
 <head>
 <link rel="icon" href="chrisdnd.png">
@@ -10,6 +10,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="jquery.js"></script>
 <script type="text/javascript" src="jquery.tablesorter.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/1.11.2/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/1.11.2/simplemde.min.js"></script>
 </head>
 
 <body>
@@ -47,7 +49,28 @@
   </table>
   <br>
   <p class="desc_p">Welcome to the Character Log. This tool lets you enter information about your current party's platers, as a quick reference if you need to quickly check who the rogue is, what race your warlock is, or what level everyone is at. Whilst not overly useful during game play, this table allows you to quickly import PC names in the initiatve tracker. The records can also be inidivually deleted, or all cleared. These records are stored locally, so should remain if you switch pages or restart your browser.</p>
+<div id="MyNotesDiv">
+<textarea name="LogNotes" form ="usrform" id="MyNotes"></textarea>
+<form id="usrform">
+  Log Name: <input type="text" name="logname">
+  <input type="submit">
+</form>
 </div>
-<footer class="myFooter">Copyright © 2016 C Dudley	</footer>
+</div>
+<footer class="MyId">Copyright © 2016 C Dudley	</footer>
+
+<script>
+var simplemde = new SimpleMDE({ 
+element: $("#MyNotes")[0],
+autosave: {
+        enabled: true,
+        uniqueId: "SavedLog",
+        delay: 1000,
+    },
+	 forceSync: true,
+	 placeholder: "Start recording your logs...",
+});
+</script>
+
 </body>
 </html>

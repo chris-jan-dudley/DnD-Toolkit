@@ -179,3 +179,6 @@ function ImportChars(){
 	}
 }
 
+var simplemde = new SimpleMDE({	
+element: document.getElementById("MyNotes"),
+});

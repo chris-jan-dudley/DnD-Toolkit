@@ -66,6 +66,7 @@ box-shadow: 0px 0px 5px #535353;
 	box-shadow: 0px 0px 10px #535353;	
 	position: fixed;	
 	left:-1px;
+	z-index:1;
 }
 ul {
 	list-style-type: none;
@@ -300,3 +301,10 @@ li.dropdown {
 	font-variant: small-caps;
 	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 }
+
+#MyNotesDiv{	
+	margin:10px;
+	text-align:left;
+}
+
+
