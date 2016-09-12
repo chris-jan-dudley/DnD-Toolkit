@@ -112,14 +112,18 @@ function NPCGen(){
 //Adds Characters to table
 function AddChar()
 {
-	var cName = $('#charNameIn').val();
-	var cClass = $('#charClassIn').val();
-	var cRace = $('#charRaceIn').val();
-	var cLvl = $('#charLvlIn').val();
-	var cAllInfo = "char/"+cName+'/'+cClass+'/'+cRace+'/'+cLvl;
-	var key = generateUUID();
-	localStorage.setItem(key, cAllInfo);
-	$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+cName+'</td><td>'+cClass+'</td><td>'+cRace+'</td><td><input class="hptab" type="number" value='+cLvl+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
+	if($('#charNameIn').val() === "" || $('#charClassIn').val() === "" || $('#charRaceIn').val() === "" || $('#charLvlIn').val() === ""){
+	alert("Please fill in all the required information!");
+	}else {
+		var cName = $('#charNameIn').val();
+		var cClass = $('#charClassIn').val();
+		var cRace = $('#charRaceIn').val();
+		var cLvl = $('#charLvlIn').val();
+		var cAllInfo = "char/"+cName+'/'+cClass+'/'+cRace+'/'+cLvl;
+		var key = generateUUID();
+		localStorage.setItem(key, cAllInfo);
+		$('#myCharTable').find('tbody').append('<tr id='+key+'><td>'+cName+'</td><td>'+cClass+'</td><td>'+cRace+'</td><td><input class="hptab" type="number" value='+cLvl+' min="0"></td><td><input type="button" class="killButton" onclick="KillPC(\''+key+'\')" value="Kill"></td></tr>').trigger('update');
+	}
 }
 
 //Loads the character table
