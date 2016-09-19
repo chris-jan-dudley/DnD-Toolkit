@@ -59,10 +59,10 @@ $(document).ready(function()
  }
  
 //Tavern Name Nouns
-var tavernN = ["King","Queen","Cock","Dwarf","Elf","Orc","Goblin","Hobbit","Giant","Axe","Sword","Mace","Club","Castle","Keep","Tavern","Inn","Demon","Devil","Horse","Stallion","Bear","Hobgoblin","Gnome","Galleon","Cauldron","Lute","Harp","Fiddle","Plough","Silence","Privy","Minstrel","Shite","Shaft","Bow","Arrow","Sloop","Pirate","Crown","Jewel","Lion","Bear","Hawk","Duckling"];
+var tavernN = ["King","Queen","Cock","Dwarf","Elf","Orc","Goblin","Hobbit","Giant","Axe","Sword","Mace","Club","Castle","Keep","Tavern","Inn","Demon","Devil","Horse","Stallion","Bear","Hobgoblin","Gnome","Galleon","Cauldron","Lute","Harp","Fiddle","Plough","Silence","Privy","Minstrel","Shite","Shaft","Bow","Arrow","Sloop","Pirate","Crown","Jewel","Lion","Bear","Hawk","Duckling","Bastard","Staff"];
 
 //Tavern Name Adjectives
-var tavernA = ["Big","Drunken","Moist","Hearty","Sturdy","Mighty","Dank","Royal","Sticky","Tasty","Towering","Leaky","Little","Noble","Unfortunate","Grim","Magic","Lucky","Smelly","Rowdy","Randy","Spicy","Ploughing","Silent","Oily","Holy","Unholy","Gritty","Naughty","Sneaky","Lusty","Crusty","Pretty","Giddy"];
+var tavernA = ["Big","Drunken","Moist","Hearty","Sturdy","Mighty","Dank","Royal","Sticky","Tasty","Towering","Leaky","Little","Noble","Unfortunate","Grim","Magic","Lucky","Smelly","Rowdy","Randy","Spicy","Ploughing","Silent","Oily","Holy","Unholy","Gritty","Naughty","Sneaky","Lusty","Crusty","Pretty","Giddy","Smelly","Fiddly","Sneaky","Sturdy","Dastardly","Merry"];
 
 //Generates a tavern name of form Adjective and Noun
 function TavernAN(){
@@ -87,11 +87,17 @@ $("#tav_name").text("The "+tavN1+" and "+tavN2);
 }
 
 //Human Male First Names
-var humanMaleFirst = ["Kris","Flavius","Alex","Harold","George","Gregory","Percival","Tiber","Reginald","Ainsley","John","Samuel","Samwell","Robert","Brandon","Hodor","Mikhail","Mike","Adam","Nathan","Norbert","Harry","Joshua","Swen","Gary","Grant","Hubert","Aaron","Alfred","Antony","Arden","Augustus","Andrea","Albert","Arthur","Bern","Barney","Bart","Brian","Bob","Benjamin","Benjen","Boris","Bruce","Buck","Bill","Byron"];
+var humanMaleFirst = ["Kris","Flavius","Alex","Harold","George","Gregory","Percival","Tiber","Reginald","Ainsley","John","Samuel","Samwell","Robert","Brandon","Hodor","Mikhail","Mike","Adam","Nathan","Norbert","Harry","Joshua","Swen","Gary","Grant","Hubert","Aaron","Alfred","Antony","Arden","Augustus","Andrea","Albert","Arthur","Bern","Barney","Bart","Brian","Bob","Benjamin","Benjen","Boris","Bruce","Buck","Bill","Byron","Frank","Walder"];
 //Human Female First Names
-var humanFemaleFirst = ["Izzy","Olivia","Elizabeth","Jane","Harriet","Helen","Ursula","Gemma","Katie","Emily","Catelyn","Arya","Sansa","Annabelle","Amy","Amelia","Belle","Belinda","Christina","Daria","Darla","Daisy","Emma","Beth","Hilda","Frida","Gemma","Talissa","Arya","Felicity","Rita","June","Jess","Sophie","Sophia","Erica"];
+var humanFemaleFirst = ["Izzy","Olivia","Elizabeth","Jane","Harriet","Helen","Ursula","Gemma","Katie","Emily","Catelyn","Arya","Sansa","Annabelle","Amy","Amelia","Belle","Belinda","Christina","Daria","Darla","Daisy","Emma","Beth","Hilda","Frida","Gemma","Talissa","Arya","Felicity","Rita","June","Jess","Sophie","Sophia","Erica","Willa"];
 //Human Lastt Names
-var humanLast = ["Jones","Smith","Taylor","Miller","Stark","Cassel","Gregor","Harris","Harriet","Johnson","Speissen","Mormont","Addleson","Porter","Kellman","Kirk","Montgomery","Jackson","Johnston","Martin","Tolkien","Wood","Hill","Castle","Townsman","Hamilton","Gregorio","Umbar","Redding"];
+var humanLast = ["Jones","Smith","Taylor","Miller","Stark","Cassel","Gregor","Harris","Harriet","Johnson","Speissen","Mormont","Addleson","Porter","Kellman","Kirk","Montgomery","Jackson","Johnston","Martin","Tolkien","Wood","Hill","Castle","Townsman","Hamilton","Gregorio","Umbar","Redding","Phillips","Barnes","Waters","Stone","Harris","Picard","Droop","Grier","Filbert","Frey","Bolton"];
+
+//Elf Male First Names
+var elfMaleFirst = [];
+
+//Elf Female First Names
+var elfFemaleFirst = [];
 
 //NPC Name generator
 function NPCGen(){
